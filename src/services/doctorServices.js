@@ -3,7 +3,7 @@ import doctorRepositories from "../repositories/doctorRepositories.js"
 async function create({ crm, specialtyId, userId, tyṕeId }) {
 
 
-    if (tyṕeId !== 1) throw new Error("User is not a doctor")
+    if (tyṕeId === 2) throw new Error("User is not a doctor")
 
 
     const { rowCount: doctorExist } = await doctorRepositories.findByUserId({ userId })
@@ -20,4 +20,3 @@ async function create({ crm, specialtyId, userId, tyṕeId }) {
 export default {
     create,
 }
-

@@ -6,6 +6,7 @@ import doctorSchema from "../schemas/Doctor.js";
 
 const doctorRoutes = Router();
 
-doctorRoutes.post("/", authMiddleware.authValidation, validateSchema(doctorSchema), doctorControllers.create);
+doctorRoutes
+    .post("/", authMiddleware.authValidation, validateSchema(doctorSchema), doctorControllers.create);
 
 export default doctorRoutes;
