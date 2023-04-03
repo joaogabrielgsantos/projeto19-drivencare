@@ -15,6 +15,7 @@ async function authValidation(req, res, next) {
         if (!user) return res.status(StatusCodes.UNAUTHORIZED).send("User not found");
 
         res.locals.user = user;
+        console.log(res.locals);
         next();
     } catch (err) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(err.message);

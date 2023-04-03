@@ -13,11 +13,6 @@ const doctorSchema = joi.object({
             .integer()
             .min(1)
             .max(55)
-            .required(),
-    userId:
-        joi
-            .number()
-            .integer()
             .required()
 
 });
