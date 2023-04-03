@@ -13,5 +13,3 @@ userRoutes
 
 
 export default userRoutes
-
-
