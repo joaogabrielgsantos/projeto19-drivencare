@@ -9,6 +9,7 @@ const userRoutes = Router()
 userRoutes
     .get("/status", (req, res) => res.send("OK!"))
     .post("/sign-up", validateSchema(userSchema), userControllers.signup)
+    .post("/sign-in", userControllers.signin)
 
 
 export default userRoutes

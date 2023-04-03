@@ -38,9 +38,21 @@ async function create({ name, email, password, typeId, addressId }) {
 }
 
 
+async function createSession({ token, userId }) {
+    await connectionDb.query(`
+    INSERT INTO sessions (token, "userId") 
+    VALUES ($1, $2)
+    
+    `, [token, userId]
+    );
+
+}
+
+
 export default {
     findByEmail,
     findPostalCode,
     createAddress,
-    create
+    create,
+    createSession
 }
